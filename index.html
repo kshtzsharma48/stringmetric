@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>stringmetric by rockymadden</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>stringmetric</h1>
+        <p>A small library of string metrics and phonetic algorithms (e.g. Dice, Hamming, Jaro, Jaro-Winkler, Levenshtein, Metaphone, N-Gram, NYSIIS, Refined NYSIIS, Refined Soundex, Soundex, Weighted Levenshtein).</p>
+
+        <p class="view"><a href="https://github.com/rockymadden/stringmetric">View the Project on GitHub <small>rockymadden/stringmetric</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/rockymadden/stringmetric/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/rockymadden/stringmetric/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/rockymadden/stringmetric">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>stringmetric <a href="http://travis-ci.org/rockymadden/stringmetric"><img src="https://secure.travis-ci.org/rockymadden/stringmetric.png" alt="Build Status"></a>
+</h1>
+
+<p>A small library of string metrics and phonetic algorithms. Each has a command line interface, is thoroughly unit tested, and performant (verified via microbenchmark suites). </p>
+
+<ul>
+<li>
+<strong>Similarity metrics</strong> determine the distance or coefficient between two arguments.</li>
+<li>
+<strong>Phonetic metrics</strong> determine if two arguments sound the same phonetically. </li>
+<li>
+<strong>Phonetic algorithms</strong> determine the phonetic representation of the argument passed. All phonetic metrics have a standalone algorithm counterpart. </li>
+<li>
+<strong>Filters</strong> clean up arguments prior to evaluation. Filters can be combined via trait stacking.</li>
+</ul><h2>Metrics and Algorithms</h2>
+
+<ul>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/Dice%27s_coefficient">Dice / Sorensen</a></strong> (Similarity metric)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/Hamming_distance">Hamming</a></strong> (Similarity metric)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/Jaro-Winkler_distance">Jaro</a></strong> (Similarity metric)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/Jaro-Winkler_distance">Jaro-Winkler</a></strong> (Similarity metric)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein</a></strong> (Similarity metric)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/Metaphone">Metaphone</a></strong> (Phonetic metric and algorithm)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/N-gram">N-Gram</a></strong> (Similarity metric and algorithm)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/New_York_State_Identification_and_Intelligence_System">NYSIIS</a></strong> (Phonetic metric and algorithm)</li>
+<li>
+<strong><a href="http://www.markcrocker.com/rexxtipsntricks/rxtt28.2.0482.html">Refined NYSIIS</a></strong> (Phonetic metric and algorithm)</li>
+<li>
+<strong><a href="http://ntz-develop.blogspot.com/2011/03/phonetic-algorithms.html">Refined Soundex</a></strong> (Phonetic metric and algorithm)</li>
+<li>
+<strong><a href="http://en.wikipedia.org/wiki/Soundex">Soundex</a></strong> (Phonetic metric and algorithm)</li>
+<li>
+<strong>Weighted Levenshtein</strong> (Similarity metric)</li>
+</ul><h2>Using the API</h2>
+
+<p>Basic example with no filtering:</p>
+
+<div class="highlight"><pre><span class="k">val</span> <span class="n">distance</span> <span class="k">=</span> <span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+</pre></div>
+
+<p>Basic example with single filter:</p>
+
+<div class="highlight"><pre><span class="k">val</span> <span class="n">distance</span> <span class="k">=</span> <span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
+    <span class="o">(</span><span class="k">new</span> <span class="nc">StringFilterDelegate</span> <span class="k">with</span> <span class="nc">AsciiLetterCaseStringFilter</span><span class="o">)</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+</pre></div>
+
+<p>Basic example with stacked filter. Filters are applied in reverse order:</p>
+
+<div class="highlight"><pre><span class="k">val</span> <span class="n">distance</span> <span class="k">=</span> <span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
+    <span class="o">(</span><span class="k">new</span> <span class="nc">StringFilterDelegate</span> <span class="k">with</span> <span class="nc">AsciiLetterCaseStringFilter</span> <span class="k">with</span> <span class="nc">AsciiLetterOnlyStringFilter</span><span class="o">)</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+</pre></div>
+
+<p>You can also use the StringMetric, StringAlgorithm, and StringFilter convenience objects:</p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="o">(</span><span class="nc">StringMetric</span><span class="o">.</span><span class="n">compareWithJaroWinkler</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> 
+    <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="nc">StringMetric</span><span class="o">.</span><span class="n">compareWithJaroWinkler</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)(</span><span class="nc">StringFilter</span><span class="o">.</span><span class="n">asciiLetterCase</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> 
+    <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+</pre></div>
+
+<h2>Using the CLI</h2>
+
+<p>The help option prints command syntax and usage:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>jaroWinklerMetric --help
+<span class="nv">$ </span>metaphoneMetric --help
+<span class="nv">$ </span>metaphoneAlgorithm --help
+</pre></div>
+
+<p>Compare "abc" to "xyz" using the Jaro-Winkler metric:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>jaroWinklerMetric abc xyz
+</pre></div>
+
+<p>Compare "abc "to "xyz" using the Metaphone metric:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>metaphoneMetric abc xyz
+</pre></div>
+
+<p>Get the phonetic representation of "abc" using the Metaphone phonetic algorithm:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>metaphoneAlgorithm abc
+</pre></div>
+
+<h2>Depending on the API</h2>
+
+<p>Available on the <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.rockymadden.stringmetric%22">Maven Central Repository</a>:</p>
+
+<ul>
+<li>
+<strong>groupId</strong>: com.rockymadden.stringmetric</li>
+<li>
+<strong>artifactId</strong>: stringmetric-core</li>
+</ul><h2>Depending on the CLI</h2>
+
+<p>Available on the <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.rockymadden.stringmetric%22">Maven Central Repository</a>:</p>
+
+<ul>
+<li>
+<strong>groupId</strong>: com.rockymadden.stringmetric</li>
+<li>
+<strong>artifactId</strong>: stringmetric-cli</li>
+</ul><h2>Building the API</h2>
+
+<div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-core:jar
+</pre></div>
+
+<h2>Building the CLI</h2>
+
+<div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-cli:tar
+</pre></div>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>Scala 2.9.x</li>
+<li>Gradle 1.x</li>
+</ul><h2>Todo</h2>
+
+<ul>
+<li>SmithWaterman</li>
+<li>MongeElkan</li>
+<li>NeedlemanWunch</li>
+<li>Jaccard</li>
+<li>Double Metaphone</li>
+<li>Memoization decorator</li>
+</ul><h2>Versioning</h2>
+
+<p><a href="http://semver.org/">Semantic Versioning v2.0</a></p>
+
+<h2>License</h2>
+
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a></p>
+
+<h2>Questions and Comments</h2>
+
+<p>Reach me at <a href="mailto:stringmetric@rockymadden.com">stringmetric@rockymadden.com</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/rockymadden">rockymadden</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
