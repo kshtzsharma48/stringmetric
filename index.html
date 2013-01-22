@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>stringmetric - A Scala library of string metrics and phonetic algorithms</title>
+    <title>stringmetric by rockymadden</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>stringmetric <a href="https://travis-ci.org/rockymadden/stringmetric"><img src="https://travis-ci.org/rockymadden/stringmetric.png?branch=master"/></a></h1>
+        <h1>stringmetric</h1>
         <p>A Scala library of string metrics and phonetic algorithms.</p>
 
         <p class="view"><a href="https://github.com/rockymadden/stringmetric">View the Project on GitHub <small>rockymadden/stringmetric</small></a></p>
@@ -28,7 +28,7 @@
         </ul>
       </header>
       <section>
-        <p>The stringmetric project provides implementations to perform approximate string matching (sometimes called fuzzy string matching), measurement of strings similarity/distance, indexing by word pronunciation, and more. Common applications of said metrics and algorithms include spell checkers, search algorithms, plagiarism detection, fraud detection, data deduplication, and record linkage. In addition to the core library, each metric and algorithm has a command line interface, is thoroughly unit tested, and performant (verified via microbenchmark suites).</p>
+        <p>The stringmetric provides implementations to perform approximate string matching (sometimes called fuzzy string matching), measurement of strings similarity/distance, indexing by word pronunciation, and more. Common applications of said metrics and algorithms include spell checkers, search algorithms, plagiarism detection, fraud detection, data deduplication, and record linkage. In addition to the core library, each metric and algorithm has a command line interface, is thoroughly unit tested, and performant (verified via microbenchmark suites).</p>
 
 <p><a href="http://dl.dropbox.com/u/51819310/stringmetric.png"><img src="http://dl.dropbox.com/u/51819310/stringmetric.png" alt="stringmetric"></a></p>
 
@@ -99,32 +99,48 @@
 
 <p>The help option prints command syntax and usage:</p>
 
+<div class="highlight"><pre><span class="nv">$ </span>metaphoneMetric --help
+Compares two strings to determine <span class="k">if </span>they are phonetically similarly, per the Metaphone algorithm.
+
+Syntax:
+  metaphoneMetric <span class="o">[</span>Options<span class="o">]</span> string1 string2...
+
+Options:
+  -h, --help
+    Outputs description, syntax, and options.
+</pre></div>
+
 <div class="highlight"><pre><span class="nv">$ </span>jaroWinklerMetric --help
-<span class="nv">$ </span>metaphoneMetric --help
-<span class="nv">$ </span>metaphoneAlgorithm --help
+Compares two strings to calculate the Jaro-Winkler distance.
+
+Syntax:
+  jaroWinklerMetric <span class="o">[</span>Options<span class="o">]</span> string1 string2...
+
+Options:
+  -h, --help
+    Outputs description, syntax, and options.
 </pre></div>
 
-<p>Compare "abc" to "xyz" using the Jaro-Winkler metric:</p>
+<p>Compare "dog" to "dawg":</p>
 
-<div class="highlight"><pre><span class="nv">$ </span>jaroWinklerMetric abc xyz
+<div class="highlight"><pre><span class="nv">$ </span>metaphoneMetric dog dawg
+<span class="nb">true</span>
 </pre></div>
 
-<p>Compare "abc "to "xyz" using the Metaphone metric:</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>metaphoneMetric abc xyz
+<div class="highlight"><pre><span class="nv">$ </span>jaroWinklerMetric dog dawg
+0.75
 </pre></div>
 
-<p>Get the phonetic representation of "abc" using the Metaphone phonetic algorithm:</p>
+<p>Get the phonetic representation of "dog" using the Metaphone phonetic algorithm:</p>
 
-<div class="highlight"><pre><span class="nv">$ </span>metaphoneAlgorithm abc
+<div class="highlight"><pre><span class="nv">$ </span>metaphoneAlgorithm dog
+tk
 </pre></div>
 
 <h2>Testing</h2>
 
 <div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-core:test
 </pre></div>
-
-<p>and</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-cli:test
 </pre></div>
@@ -133,8 +149,6 @@
 
 <div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-core:jar
 </pre></div>
-
-<p>and</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-cli:tar
 </pre></div>
@@ -178,6 +192,7 @@
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/rockymadden">rockymadden</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
