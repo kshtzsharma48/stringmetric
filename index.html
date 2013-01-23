@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>stringmetric - A Scala library of string metrics and phonetic algorithms</title>
+    <title>stringmetric by rockymadden</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,8 +15,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>stringmetric <a href="https://travis-ci.org/rockymadden/stringmetric"><img src="https://travis-ci.org/rockymadden/stringmetric.png?branch=master"/></a></h1>
-        <p>A Scala library of string metrics and phonetic algorithms.</p>
+        <h1>stringmetric</h1>
+        <p>String metrics and phonetic algorithms implemented in Scala.</p>
 
         <p class="view"><a href="https://github.com/rockymadden/stringmetric">View the Project on GitHub <small>rockymadden/stringmetric</small></a></p>
 
@@ -28,7 +28,7 @@
         </ul>
       </header>
       <section>
-        <p>The stringmetric project provides implementations to perform approximate string matching (sometimes called fuzzy string matching), measurement of strings similarity/distance, indexing by word pronunciation, and more. Common applications of said metrics and algorithms include spell checkers, search algorithms, plagiarism detection, fraud detection, data deduplication, and record linkage. In addition to the core library, each metric and algorithm has a command line interface. Both subprojects are heavily unit tested and performant (verified via microbenchmark suites).</p>
+        <p>The library provides facilities to perform approximate string matching, measurement of string similarity/distance, indexing by word pronunciation, and sounds-like comparisons. In addition to the core library, each metric and algorithm has a command line interface. Heavy emphasis is placed on unit testing and performance (verified via microbenchmark suites).</p>
 
 <h2>Metrics and Algorithms</h2>
 
@@ -59,45 +59,294 @@
 <strong><a href="http://en.wikipedia.org/wiki/Soundex">Soundex</a></strong> (Phonetic metric and algorithm)</li>
 <li>
 <strong>Weighted Levenshtein</strong> (Similarity metric)</li>
-</ul><h2>Visualization</h2>
+</ul><h2>Installation</h2>
 
-<p><a href="http://dl.dropbox.com/u/51819310/stringmetric.png"><img src="http://dl.dropbox.com/u/51819310/stringmetric.png" alt="stringmetric"></a></p>
+<p>Available on the <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.rockymadden.stringmetric%22">Maven Central Repository</a>:</p>
 
-<h2>Using the Core</h2>
+<ul>
+<li>
+<strong>groupId</strong>: com.rockymadden.stringmetric</li>
+<li>
+<strong>artifactId</strong>: stringmetric-core</li>
+<li>
+<strong>artifactId</strong>: stringmetric-cli</li>
+</ul><h2>Similarity package</h2>
+
+<p>Useful for approximate string matching and measurement of string distance. Most metrics calculate the similarity of two strings as a double with a value between 0 and 1. A value of 0 being completely different and a value of 1 being completely similar.</p>
+
+<p><strong>Dice / Sorensen Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">DiceSorensenMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"night"</span><span class="o">,</span> <span class="s">"nacht"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">DiceSorensenMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"context"</span><span class="o">,</span> <span class="s">"contact"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>0.6
+0.7142857142857143
+</code></pre>
+
+<p><strong>Hamming Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">HammingMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"toned"</span><span class="o">,</span> <span class="s">"roses"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">HammingMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"1011101"</span><span class="o">,</span> <span class="s">"1001001"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output: <em>(Note the exception of integers, rather than doubles, being returned.)</em></p>
+
+<pre><code>3
+2
+</code></pre>
+
+<p><strong>Jaro Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">JaroMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"dwayne"</span><span class="o">,</span> <span class="s">"duane"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">JaroMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"jones"</span><span class="o">,</span> <span class="s">"johnson"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">JaroMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"fvie"</span><span class="o">,</span> <span class="s">"ten"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>0.8222222222222223
+0.7904761904761904
+0
+</code></pre>
+
+<p><strong>Jaro-Winkler Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"dwayne"</span><span class="o">,</span> <span class="s">"duane"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"jones"</span><span class="o">,</span> <span class="s">"johnson"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"fvie"</span><span class="o">,</span> <span class="s">"ten"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>0.8400000000000001
+0.8323809523809523
+0
+</code></pre>
+
+<p><strong>Levenshtein Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">LevenshteinMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"sitting"</span><span class="o">,</span> <span class="s">"kitten"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">LevenshteinMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"cake"</span><span class="o">,</span> <span class="s">"drake"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output: <em>(Note the exception of integers, rather than doubles, being returned.)</em></p>
+
+<pre><code>3
+2
+</code></pre>
+
+<p><strong>N-Gram Metric:</strong> <em>(Note you must specify the size of the n-gram you wish to use. This can be done implicitly.)</em></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">NGramMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"night"</span><span class="o">,</span> <span class="s">"nacht"</span><span class="o">)(</span><span class="mi">1</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">NGramMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"night"</span><span class="o">,</span> <span class="s">"nacht"</span><span class="o">)(</span><span class="mi">2</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">NGramMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"context"</span><span class="o">,</span> <span class="s">"contact"</span><span class="o">)(</span><span class="mi">2</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>0.6
+0.25
+0.5
+</code></pre>
+
+<p><strong>N-Gram Algorithm:</strong> <em>(Note you must specify the size of the n-gram you wish to use. This can be done implicitly.)</em></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">NGramAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"abcdefghijklmnopqrstuvwxyz"</span><span class="o">)(</span><span class="mi">1</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">NGramAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"abcdefghijklmnopqrstuvwxyz"</span><span class="o">)(</span><span class="mi">2</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">NGramAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"abcdefghijklmnopqrstuvwxyz"</span><span class="o">)(</span><span class="mi">3</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+Array("ab", "bc", "cd", "de", "ef", "fg", "gh", "hi", "ij", "jk", "kl", "lm", "mn", "no", "op", "pq", "qr", "rs", "st", "tu", "uv", "vw", "wx", "xy", "yz")
+Array("abc", "bcd", "cde", "def", "efg", "fgh", "ghi", "hij", "ijk", "jkl", "klm", "lmn", "mno", "nop", "opq", "pqr", "qrs", "rst", "stu", "tuv", "uvw", "vwx", "wxy", "xyz")
+</code></pre>
+
+<p><strong>Ratcliff/Obershelp Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">RatcliffObershelpMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"aleksander"</span><span class="o">,</span> <span class="s">"alexandre"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">RatcliffObershelpMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"pennsylvania"</span><span class="o">,</span> <span class="s">"pencilvaneya"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>0.7368421052631579
+0.6666666666666666
+</code></pre>
+
+<p><strong>Weighted Levenshtein Metric:</strong> <em>(Note you must specify the weight of each operation. Delete, insert, and then substitute. This can be done implicitly.)</em></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">WeightedLevenshteinMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"book"</span><span class="o">,</span> <span class="s">"back"</span><span class="o">)(</span><span class="mi">10</span><span class="o">,</span> <span class="mf">0.1</span><span class="o">,</span> <span class="mi">1</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">WeightedLevenshteinMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"hosp"</span><span class="o">,</span> <span class="s">"hospital"</span><span class="o">)(</span><span class="mi">10</span><span class="o">,</span> <span class="mf">0.1</span><span class="o">,</span> <span class="mi">1</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">WeightedLevenshteinMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"hospital"</span><span class="o">,</span> <span class="s">"hosp"</span><span class="o">)(</span><span class="mi">10</span><span class="o">,</span> <span class="mf">0.1</span><span class="o">,</span> <span class="mi">1</span><span class="o">))</span>
+</pre></div>
+
+<p>Output: <em>(Note that while a double is returned, it can be outside the range of 0 to 1, based upon the weights used.)</em></p>
+
+<pre><code>2
+0.4
+40
+</code></pre>
+
+<h2>Phonetic package</h2>
+
+<p>Useful for indexing by word pronunciation and performing sounds-like comparisons. All metrics return a boolean value indicating if the two strings sound the same, per the algorithm used. All metrics have a algorithm counterpart which provide the means to perform indexing by word pronunciation.</p>
+
+<p><strong>Metaphone Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">MetaphoneMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"merci"</span><span class="o">,</span> <span class="s">"mercy"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">MetaphoneMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"dumb"</span><span class="o">,</span> <span class="s">"gum"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>true
+false
+</code></pre>
+
+<p><strong>Metaphone Algorithm:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">MetaphoneAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"dumb"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">MetaphoneAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"knuth"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>tm
+n0
+</code></pre>
+
+<p><strong>NYSIIS Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">NysiisMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"ham"</span><span class="o">,</span> <span class="s">"hum"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">NysiisMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"dumb"</span><span class="o">,</span> <span class="s">"gum"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>true
+false
+</code></pre>
+
+<p><strong>NYSIIS Algorithm:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">NysiisAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"macintosh"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">NysiisAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"knuth"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>mcant
+nnat
+</code></pre>
+
+<p><strong>Refined NYSIIS Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">RefinedNysiisMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"ham"</span><span class="o">,</span> <span class="s">"hum"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">RefinedNysiisMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"dumb"</span><span class="o">,</span> <span class="s">"gum"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>true
+false
+</code></pre>
+
+<p><strong>Refined NYSIIS Algorithm:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">RefinedNysiisAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"macintosh"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">RefinedNysiisAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"westerlund"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>mcantas
+wastarlad
+</code></pre>
+
+<p><strong>Refined Soundex Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">RefinedSoundexMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"robert"</span><span class="o">,</span> <span class="s">"rupert"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">RefinedSoundexMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"robert"</span><span class="o">,</span> <span class="s">"rubin"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>true
+false
+</code></pre>
+
+<p><strong>Refined Soundex Algorithm:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">RefinedSoundexAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"hairs"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">RefinedSoundexAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"lambert"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>h093
+l7081096
+</code></pre>
+
+<p><strong>Soundex Metric:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">SoundexMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"robert"</span><span class="o">,</span> <span class="s">"rupert"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">SoundexMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"robert"</span><span class="o">,</span> <span class="s">"rubin"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>true
+false
+</code></pre>
+
+<p><strong>Soundex Algorithm:</strong></p>
+
+<div class="highlight"><pre><span class="n">println</span><span class="o">(</span><span class="nc">SoundexAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"rupert"</span><span class="o">))</span>
+<span class="n">println</span><span class="o">(</span><span class="nc">SoundexAlgorithm</span><span class="o">.</span><span class="n">compute</span><span class="o">(</span><span class="s">"lukasiewicz"</span><span class="o">))</span>
+</pre></div>
+
+<p>Output:</p>
+
+<pre><code>r163
+l222
+</code></pre>
+
+<h2>Filter package</h2>
+
+<p>Useful for filtering strings prior to evaluation (e.g. ignore case, ignore non-alpha, ignore spaces). Filters can be used implicitly.</p>
 
 <p>Basic example with no filtering:</p>
 
-<div class="highlight"><pre><span class="k">val</span> <span class="n">distance</span> <span class="k">=</span> <span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
-
-<span class="k">if</span> <span class="o">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+<div class="highlight"><pre><span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
 </pre></div>
 
 <p>Basic example with single filter:</p>
 
-<div class="highlight"><pre><span class="k">val</span> <span class="n">distance</span> <span class="k">=</span> <span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
-    <span class="o">(</span><span class="k">new</span> <span class="nc">StringFilterDelegate</span> <span class="k">with</span> <span class="nc">AsciiLetterCaseStringFilter</span><span class="o">)</span>
-
-<span class="k">if</span> <span class="o">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+<div class="highlight"><pre><span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)(</span><span class="k">new</span> <span class="nc">StringFilterDelegate</span> <span class="k">with</span> <span class="nc">AsciiLetterCaseStringFilter</span><span class="o">)</span>
 </pre></div>
 
 <p>Basic example with stacked filter. Filters are applied in reverse order:</p>
 
-<div class="highlight"><pre><span class="k">val</span> <span class="n">distance</span> <span class="k">=</span> <span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
-    <span class="o">(</span><span class="k">new</span> <span class="nc">StringFilterDelegate</span> <span class="k">with</span> <span class="nc">AsciiLetterCaseStringFilter</span> <span class="k">with</span> <span class="nc">AsciiLetterOnlyStringFilter</span><span class="o">)</span>
-
-<span class="k">if</span> <span class="o">(</span><span class="n">distance</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span> <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+<div class="highlight"><pre><span class="nc">JaroWinklerMetric</span><span class="o">.</span><span class="n">compare</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)(</span><span class="k">new</span> <span class="nc">StringFilterDelegate</span> <span class="k">with</span> <span class="nc">AsciiLetterCaseStringFilter</span> <span class="k">with</span> <span class="nc">AsciiLetterOnlyStringFilter</span><span class="o">)</span>
 </pre></div>
 
-<p>You can also use the StringMetric, StringAlgorithm, and StringFilter convenience objects:</p>
+<h2>Convenience objects</h2>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="o">(</span><span class="nc">StringMetric</span><span class="o">.</span><span class="n">compareWithJaroWinkler</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span>
-    <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+<p>The StringMetric, StringAlgorithm, and StringFilter convenience objects are available to make interactions with the library easier:</p>
 
-<span class="k">if</span> <span class="o">(</span><span class="nc">StringMetric</span><span class="o">.</span><span class="n">compareWithJaroWinkler</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)(</span><span class="nc">StringFilter</span><span class="o">.</span><span class="n">asciiLetterCase</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="o">)</span>
-    <span class="n">println</span><span class="o">(</span><span class="s">"It's likely you're a match!"</span><span class="o">)</span>
+<div class="highlight"><pre><span class="nc">StringMetric</span><span class="o">.</span><span class="n">compareWithJaroWinkler</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
+<span class="nc">StringMetric</span><span class="o">.</span><span class="n">compareWithJaroWinkler</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)(</span><span class="nc">StringFilter</span><span class="o">.</span><span class="n">asciiLetterCase</span><span class="o">)</span>
+<span class="nc">StringAlgorithm</span><span class="o">.</span><span class="n">computeWithMetaphone</span><span class="o">(</span><span class="s">"string1"</span><span class="o">,</span> <span class="s">"string2"</span><span class="o">)</span>
 </pre></div>
 
-<h2>Using the CLI</h2>
+<h2>Command line interfaces</h2>
+
+<p>Every metric and algorithm has a command line interface.</p>
 
 <p>The help option prints command syntax and usage:</p>
 
@@ -139,33 +388,15 @@ Options:
 tk
 </pre></div>
 
-<h2>Testing</h2>
-
-<div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-core:test
-</pre></div>
-
-<div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-cli:test
-</pre></div>
-
-<h2>Building</h2>
-
-<div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-core:jar
-</pre></div>
-
-<div class="highlight"><pre><span class="nv">$ </span>gradle :stringmetric-cli:tar
-</pre></div>
-
-<h2>Depending Upon</h2>
-
-<p>Available on the <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.rockymadden.stringmetric%22">Maven Central Repository</a>:</p>
+<h2>Todo</h2>
 
 <ul>
-<li>
-<strong>groupId</strong>: com.rockymadden.stringmetric</li>
-<li>
-<strong>artifactId</strong>: stringmetric-core</li>
-<li>
-<strong>artifactId</strong>: stringmetric-cli</li>
+<li>SmithWaterman</li>
+<li>MongeElkan</li>
+<li>NeedlemanWunch</li>
+<li>Jaccard</li>
+<li>Double Metaphone</li>
+<li>Memoization decorator</li>
 </ul><h2>Requirements</h2>
 
 <ul>
@@ -179,21 +410,13 @@ tk
 
 <p><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a></p>
 
-<h2>Todo</h2>
+<h2>Questions, Comments, and Requests</h2>
 
-<ul>
-<li>SmithWaterman</li>
-<li>MongeElkan</li>
-<li>NeedlemanWunch</li>
-<li>Jaccard</li>
-<li>Double Metaphone</li>
-<li>Memoization decorator</li>
-</ul><h2>Questions and Comments</h2>
-
-<p>Reach me at <a href="mailto:stringmetric@rockymadden.com">stringmetric@rockymadden.com</a>.</p>
+<p>Find all my contact information on my <a href="http://rockymadden.com/">personal website</a>.</p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="http://rockymadden.com/">rockymadden</a></p>
+        <p>This project is maintained by <a href="https://github.com/rockymadden">rockymadden</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
