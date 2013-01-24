@@ -26,6 +26,8 @@ h1 {
 
 h2 {
   color:#393939;
+  border-bottom: 1px solid #ccc;
+  padding: 0 0 5px 0;
 }
 
 h3, h4, h5, h6 {
