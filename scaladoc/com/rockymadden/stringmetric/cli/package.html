@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>cli - stringmetric scaladoc - com.rockymadden.stringmetric.cli</title>
+          <meta name="description" content="cli - stringmetric scaladoc - com.rockymadden.stringmetric.cli" />
+          <meta name="keywords" content="cli stringmetric scaladoc com.rockymadden.stringmetric.cli" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.rockymadden.stringmetric.cli.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.rockymadden">rockymadden</a>.<a href="../package.html" class="extype" name="com.rockymadden.stringmetric">stringmetric</a></p>
+        <h1>cli</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cli</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides core CLI functionality. Note that some things might look sloppy (e.g. access modifiers, broad imports,
+repetitive imports, etc), but are required because of the way scalascript is ultimately compiled.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="com.rockymadden.stringmetric.cli"><span>cli</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.rockymadden.stringmetric.cli.Command" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CommandextendsObject"></a>
+      <a id="Command:Command"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Command.html"><span class="name">Command</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Defines the traits and provides basic implementations of a command.</p>
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMap=Map[Symbol,String]"></a>
+      <a id="OptionMap:OptionMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OptionMap</span><span class="result"> = <span class="extype" name="scala.collection.immutable.Map">Map</span>[<span class="extype" name="scala.Symbol">Symbol</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapArray" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapArrayextendsOptionMapType[Array[String]]withProductwithSerializable"></a>
+      <a id="OptionMapArray:OptionMapArray"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapArray.html"><span class="name">OptionMapArray</span></a><span class="params">(<span name="arrayString">arrayString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapBigDecimal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapBigDecimalextendsOptionMapType[BigDecimal]withProductwithSerializable"></a>
+      <a id="OptionMapBigDecimal:OptionMapBigDecimal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapBigDecimal.html"><span class="name">OptionMapBigDecimal</span></a><span class="params">(<span name="bigDecimalString">bigDecimalString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.BigDecimal">BigDecimal</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapBigInt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapBigIntextendsOptionMapType[BigInt]withProductwithSerializable"></a>
+      <a id="OptionMapBigInt:OptionMapBigInt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapBigInt.html"><span class="name">OptionMapBigInt</span></a><span class="params">(<span name="bigIntString">bigIntString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.BigInt">BigInt</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapDouble" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapDoubleextendsOptionMapType[Double]withProductwithSerializable"></a>
+      <a id="OptionMapDouble:OptionMapDouble"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapDouble.html"><span class="name">OptionMapDouble</span></a><span class="params">(<span name="doubleString">doubleString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.Double">Double</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapFloat" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapFloatextendsOptionMapType[Float]withProductwithSerializable"></a>
+      <a id="OptionMapFloat:OptionMapFloat"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapFloat.html"><span class="name">OptionMapFloat</span></a><span class="params">(<span name="floatString">floatString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.Float">Float</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapInt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapIntextendsOptionMapType[Int]withProductwithSerializable"></a>
+      <a id="OptionMapInt:OptionMapInt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapInt.html"><span class="name">OptionMapInt</span></a><span class="params">(<span name="intString">intString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.Int">Int</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapListextendsOptionMapType[List[String]]withProductwithSerializable"></a>
+      <a id="OptionMapList:OptionMapList"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapList.html"><span class="name">OptionMapList</span></a><span class="params">(<span name="listString">listString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapLong" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapLongextendsOptionMapType[Long]withProductwithSerializable"></a>
+      <a id="OptionMapLong:OptionMapLong"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapLong.html"><span class="name">OptionMapLong</span></a><span class="params">(<span name="longString">longString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.Long">Long</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapShort" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapShortextendsOptionMapType[Short]withProductwithSerializable"></a>
+      <a id="OptionMapShort:OptionMapShort"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapShort.html"><span class="name">OptionMapShort</span></a><span class="params">(<span name="shortString">shortString: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="OptionMapType.html" class="extype" name="com.rockymadden.stringmetric.cli.OptionMapType">OptionMapType</a>[<span class="extype" name="scala.Short">Short</span>] with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapSpec" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OptionMapSpecextendsScalaTest"></a>
+      <a id="OptionMapSpec:OptionMapSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapSpec.html"><span class="name">OptionMapSpec</span></a><span class="result"> extends <a href="../ScalaTest.html" class="extype" name="com.rockymadden.stringmetric.ScalaTest">ScalaTest</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@RunWith</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapType" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OptionMapType[T]extendsObject"></a>
+      <a id="OptionMapType[T]:OptionMapType[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapType.html"><span class="name">OptionMapType</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapTypeSpec" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OptionMapTypeSpecextendsScalaTest"></a>
+      <a id="OptionMapTypeSpec:OptionMapTypeSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapTypeSpec.html"><span class="name">OptionMapTypeSpec</span></a><span class="result"> extends <a href="../ScalaTest.html" class="extype" name="com.rockymadden.stringmetric.ScalaTest">ScalaTest</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@RunWith</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.rockymadden.stringmetric.cli.OptionMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMap"></a>
+      <a id="OptionMap:OptionMap"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMap$.html"><span class="name">OptionMap</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.OptionMapType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OptionMapType"></a>
+      <a id="OptionMapType:OptionMapType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionMapType$.html"><span class="name">OptionMapType</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="com.rockymadden.stringmetric.cli.phonetic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="phonetic"></a>
+      <a id="phonetic:phonetic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="phonetic/package.html"><span class="name">phonetic</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Provides core phonetic CLI functionality.</p>
+    </li><li name="com.rockymadden.stringmetric.cli.similarity" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="similarity"></a>
+      <a id="similarity:similarity"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="similarity/package.html"><span class="name">similarity</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Provides core similarity CLI functionality.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
