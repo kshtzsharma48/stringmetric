@@ -2,22 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>LevenshteinMetric - stringmetric scaladoc - com.rockymadden.stringmetric.similarity.LevenshteinMetric</title>
-          <meta name="description" content="LevenshteinMetric - stringmetric scaladoc - com.rockymadden.stringmetric.similarity.LevenshteinMetric" />
-          <meta name="keywords" content="LevenshteinMetric stringmetric scaladoc com.rockymadden.stringmetric.similarity.LevenshteinMetric" />
+          <title>ConfigurableAlgorithm - stringmetric scaladoc - com.rockymadden.stringmetric.ConfigurableAlgorithm</title>
+          <meta name="description" content="ConfigurableAlgorithm - stringmetric scaladoc - com.rockymadden.stringmetric.ConfigurableAlgorithm" />
+          <meta name="keywords" content="ConfigurableAlgorithm stringmetric scaladoc com.rockymadden.stringmetric.ConfigurableAlgorithm" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
       
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../../index.html';
-            var hash = 'com.rockymadden.stringmetric.similarity.LevenshteinMetric';
+            var url = '../../../index.html';
+            var hash = 'com.rockymadden.stringmetric.ConfigurableAlgorithm';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,24 +29,27 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a href="LevenshteinMetric$.html" title="Go to companion"><img src="../../../../lib/class_to_object_big.png" /></a>
-        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.rockymadden">rockymadden</a>.<a href="../package.html" class="extype" name="com.rockymadden.stringmetric">stringmetric</a>.<a href="package.html" class="extype" name="com.rockymadden.stringmetric.similarity">similarity</a></p>
-        <h1><a href="LevenshteinMetric$.html" title="Go to companion">LevenshteinMetric</a></h1>
+        <img src="../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="com">com</a>.<a href="../package.html" class="extype" name="com.rockymadden">rockymadden</a>.<a href="package.html" class="extype" name="com.rockymadden.stringmetric">stringmetric</a></p>
+        <h1>ConfigurableAlgorithm</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">LevenshteinMetric</span><span class="result"> extends <a href="../StringMetric.html" class="extype" name="com.rockymadden.stringmetric.StringMetric">StringMetric</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">ConfigurableAlgorithm</span><span class="tparams">[<span name="T">T</span>, <span name="R">R</span>, <span name="O">O</span>]</span><span class="result"> extends <a href="ConfigurableAlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithmLike">ConfigurableAlgorithmLike</a>[<span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.T">T</span>, <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.R">R</span>, <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.O">O</span>]</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>An implementation of the Levenshtein metric.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="../StringMetric.html" class="extype" name="com.rockymadden.stringmetric.StringMetric">StringMetric</a>[<span class="extype" name="scala.Int">Int</span>], <a href="../StringFilterLike.html" class="extype" name="com.rockymadden.stringmetric.StringFilterLike">StringFilterLike</a>, <a href="../FilterLike.html" class="extype" name="com.rockymadden.stringmetric.FilterLike">FilterLike</a>[<span class="extype" name="scala.Predef.String">String</span>], <a href="../StringMetricLike.html" class="extype" name="com.rockymadden.stringmetric.StringMetricLike">StringMetricLike</a>[<span class="extype" name="scala.Int">Int</span>], <a href="../Metric.html" class="extype" name="com.rockymadden.stringmetric.Metric">Metric</a>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Int">Int</span>], <a href="../MetricLike.html" class="extype" name="com.rockymadden.stringmetric.MetricLike">MetricLike</a>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Int">Int</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="ConfigurableAlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithmLike">ConfigurableAlgorithmLike</a>[<span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.T">T</span>, <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.R">R</span>, <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.O">O</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+          <span class="toggle">Known Subclasses</span>
+          <div class="subClasses hiddenContent"><a href="ConfigurableStringAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.ConfigurableStringAlgorithm">ConfigurableStringAlgorithm</a>, <a href="similarity/NGramAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.similarity.NGramAlgorithm">NGramAlgorithm</a></div>
         </div></div>
         
 
@@ -64,7 +67,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.rockymadden.stringmetric.similarity.LevenshteinMetric"><span>LevenshteinMetric</span></li><li class="in" name="com.rockymadden.stringmetric.StringMetric"><span>StringMetric</span></li><li class="in" name="com.rockymadden.stringmetric.StringFilterLike"><span>StringFilterLike</span></li><li class="in" name="com.rockymadden.stringmetric.FilterLike"><span>FilterLike</span></li><li class="in" name="com.rockymadden.stringmetric.StringMetricLike"><span>StringMetricLike</span></li><li class="in" name="com.rockymadden.stringmetric.Metric"><span>Metric</span></li><li class="in" name="com.rockymadden.stringmetric.MetricLike"><span>MetricLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.rockymadden.stringmetric.ConfigurableAlgorithm"><span>ConfigurableAlgorithm</span></li><li class="in" name="com.rockymadden.stringmetric.ConfigurableAlgorithmLike"><span>ConfigurableAlgorithmLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -82,30 +85,30 @@
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="com.rockymadden.stringmetric.similarity.LevenshteinMetric#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;():com.rockymadden.stringmetric.similarity.LevenshteinMetric"></a>
-      <a id="&lt;init&gt;:LevenshteinMetric"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">LevenshteinMetric</span><span class="params">()</span>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
-
         
 
         
 
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Abstract Value Members</h3>
+              <ol><li name="com.rockymadden.stringmetric.ConfigurableAlgorithmLike#compute" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="compute(t:T)(implicito:O):Option[R]"></a>
+      <a id="compute(T)(O):Option[R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compute</span><span class="params">(<span name="t">t: <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="o">o: <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.O">O</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.R">R</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ConfigurableAlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithmLike">ConfigurableAlgorithmLike</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -200,32 +203,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.rockymadden.stringmetric.similarity.LevenshteinMetric#compare" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="compare(string1:String,string2:String):Option[Int]"></a>
-      <a id="compare(String,String):Option[Int]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">compare</span><span class="params">(<span name="string1">string1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="string2">string2: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.rockymadden.stringmetric.similarity.LevenshteinMetric">LevenshteinMetric</a> → <a href="../MetricLike.html" class="extype" name="com.rockymadden.stringmetric.MetricLike">MetricLike</a></dd></dl></div>
-    </li><li name="com.rockymadden.stringmetric.similarity.LevenshteinMetric#compare" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="compare(charArray1:Array[Char],charArray2:Array[Char]):Option[Int]"></a>
-      <a id="compare(Array[Char],Array[Char]):Option[Int]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">compare</span><span class="params">(<span name="charArray1">charArray1: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>, <span name="charArray2">charArray2: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.rockymadden.stringmetric.similarity.LevenshteinMetric">LevenshteinMetric</a> → <a href="../StringMetricLike.html" class="extype" name="com.rockymadden.stringmetric.StringMetricLike">StringMetricLike</a></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -252,32 +229,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.rockymadden.stringmetric.StringMetric#filter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="filter(string:String):String"></a>
-      <a id="filter(String):String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">filter</span><span class="params">(<span name="string">string: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../StringMetric.html" class="extype" name="com.rockymadden.stringmetric.StringMetric">StringMetric</a> → <a href="../FilterLike.html" class="extype" name="com.rockymadden.stringmetric.FilterLike">FilterLike</a></dd></dl></div>
-    </li><li name="com.rockymadden.stringmetric.StringMetric#filter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="filter(charArray:Array[Char]):Array[Char]"></a>
-      <a id="filter(Array[Char]):Array[Char]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">filter</span><span class="params">(<span name="charArray">charArray: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../StringMetric.html" class="extype" name="com.rockymadden.stringmetric.StringMetric">StringMetric</a> → <a href="../StringFilterLike.html" class="extype" name="com.rockymadden.stringmetric.StringFilterLike">StringFilterLike</a></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -455,18 +406,8 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="com.rockymadden.stringmetric.StringMetric">
-              <h3>Inherited from <a href="../StringMetric.html" class="extype" name="com.rockymadden.stringmetric.StringMetric">StringMetric</a>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="com.rockymadden.stringmetric.StringFilterLike">
-              <h3>Inherited from <a href="../StringFilterLike.html" class="extype" name="com.rockymadden.stringmetric.StringFilterLike">StringFilterLike</a></h3>
-            </div><div class="parent" name="com.rockymadden.stringmetric.FilterLike">
-              <h3>Inherited from <a href="../FilterLike.html" class="extype" name="com.rockymadden.stringmetric.FilterLike">FilterLike</a>[<span class="extype" name="scala.Predef.String">String</span>]</h3>
-            </div><div class="parent" name="com.rockymadden.stringmetric.StringMetricLike">
-              <h3>Inherited from <a href="../StringMetricLike.html" class="extype" name="com.rockymadden.stringmetric.StringMetricLike">StringMetricLike</a>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="com.rockymadden.stringmetric.Metric">
-              <h3>Inherited from <a href="../Metric.html" class="extype" name="com.rockymadden.stringmetric.Metric">Metric</a>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="com.rockymadden.stringmetric.MetricLike">
-              <h3>Inherited from <a href="../MetricLike.html" class="extype" name="com.rockymadden.stringmetric.MetricLike">MetricLike</a>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Int">Int</span>]</h3>
+        <div class="parent" name="com.rockymadden.stringmetric.ConfigurableAlgorithmLike">
+              <h3>Inherited from <a href="ConfigurableAlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithmLike">ConfigurableAlgorithmLike</a>[<span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.T">T</span>, <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.R">R</span>, <span class="extype" name="com.rockymadden.stringmetric.ConfigurableAlgorithm.O">O</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

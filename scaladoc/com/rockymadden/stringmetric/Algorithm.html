@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>StringAlgorithmLike - stringmetric scaladoc - com.rockymadden.stringmetric.StringAlgorithmLike</title>
-          <meta name="description" content="StringAlgorithmLike - stringmetric scaladoc - com.rockymadden.stringmetric.StringAlgorithmLike" />
-          <meta name="keywords" content="StringAlgorithmLike stringmetric scaladoc com.rockymadden.stringmetric.StringAlgorithmLike" />
+          <title>Algorithm - stringmetric scaladoc - com.rockymadden.stringmetric.Algorithm</title>
+          <meta name="description" content="Algorithm - stringmetric scaladoc - com.rockymadden.stringmetric.Algorithm" />
+          <meta name="keywords" content="Algorithm stringmetric scaladoc com.rockymadden.stringmetric.Algorithm" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -17,7 +17,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
-            var hash = 'com.rockymadden.stringmetric.StringAlgorithmLike$';
+            var hash = 'com.rockymadden.stringmetric.Algorithm';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -27,26 +27,29 @@
    	  </script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <a href="StringAlgorithmLike.html" title="Go to companion"><img src="../../../lib/object_to_trait_big.png" /></a>
+        <img src="../../../lib/trait_big.png" />
         <p id="owner"><a href="../../package.html" class="extype" name="com">com</a>.<a href="../package.html" class="extype" name="com.rockymadden">rockymadden</a>.<a href="package.html" class="extype" name="com.rockymadden.stringmetric">stringmetric</a></p>
-        <h1><a href="StringAlgorithmLike.html" title="Go to companion">StringAlgorithmLike</a></h1>
+        <h1>Algorithm</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">StringAlgorithmLike</span>
+        <span class="name">Algorithm</span><span class="tparams">[<span name="T">T</span>, <span name="R">R</span>]</span><span class="result"> extends <a href="AlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.AlgorithmLike">AlgorithmLike</a>[<span class="extype" name="com.rockymadden.stringmetric.Algorithm.T">T</span>, <span class="extype" name="com.rockymadden.stringmetric.Algorithm.R">R</span>]</span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="AlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.AlgorithmLike">AlgorithmLike</a>[<span class="extype" name="com.rockymadden.stringmetric.Algorithm.T">T</span>, <span class="extype" name="com.rockymadden.stringmetric.Algorithm.R">R</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+          <span class="toggle">Known Subclasses</span>
+          <div class="subClasses hiddenContent"><a href="phonetic/MetaphoneAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.phonetic.MetaphoneAlgorithm">MetaphoneAlgorithm</a>, <a href="phonetic/NysiisAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.phonetic.NysiisAlgorithm">NysiisAlgorithm</a>, <a href="phonetic/RefinedNysiisAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.phonetic.RefinedNysiisAlgorithm">RefinedNysiisAlgorithm</a>, <a href="phonetic/RefinedSoundexAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.phonetic.RefinedSoundexAlgorithm">RefinedSoundexAlgorithm</a>, <a href="phonetic/SoundexAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.phonetic.SoundexAlgorithm">SoundexAlgorithm</a>, <a href="StringAlgorithm.html" class="extype" name="com.rockymadden.stringmetric.StringAlgorithm">StringAlgorithm</a></div>
         </div></div>
         
 
@@ -64,7 +67,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.rockymadden.stringmetric.StringAlgorithmLike"><span>StringAlgorithmLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.rockymadden.stringmetric.Algorithm"><span>Algorithm</span></li><li class="in" name="com.rockymadden.stringmetric.AlgorithmLike"><span>AlgorithmLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -86,10 +89,26 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="com.rockymadden.stringmetric.AlgorithmLike#compute" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="compute(t:T):Option[R]"></a>
+      <a id="compute(T):Option[R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">compute</span><span class="params">(<span name="t">t: <span class="extype" name="com.rockymadden.stringmetric.Algorithm.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="com.rockymadden.stringmetric.Algorithm.R">R</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="AlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.AlgorithmLike">AlgorithmLike</a></dd></dl></div>
+    </li></ol>
+            </div>
 
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -184,136 +203,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithMetaphone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithMetaphone(string:String):Option[String]"></a>
-      <a id="computeWithMetaphone(String):Option[String]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithMetaphone</span><span class="params">(<span name="string">string: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithMetaphone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithMetaphone(charArray:Array[Char]):Option[Array[Char]]"></a>
-      <a id="computeWithMetaphone(Array[Char]):Option[Array[Char]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithMetaphone</span><span class="params">(<span name="charArray">charArray: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithNGram" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithNGram(string:String)(n:Int):Option[Array[String]]"></a>
-      <a id="computeWithNGram(String)(Int):Option[Array[String]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithNGram</span><span class="params">(<span name="string">string: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithNGram" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithNGram(charArray:Array[Char])(n:Int):Option[Array[Array[Char]]]"></a>
-      <a id="computeWithNGram(Array[Char])(Int):Option[Array[Array[Char]]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithNGram</span><span class="params">(<span name="charArray">charArray: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]]]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithNysiis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithNysiis(string:String):Option[String]"></a>
-      <a id="computeWithNysiis(String):Option[String]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithNysiis</span><span class="params">(<span name="string">string: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithNysiis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithNysiis(charArray:Array[Char]):Option[Array[Char]]"></a>
-      <a id="computeWithNysiis(Array[Char]):Option[Array[Char]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithNysiis</span><span class="params">(<span name="charArray">charArray: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithRefinedSoundex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithRefinedSoundex(string:String):Option[String]"></a>
-      <a id="computeWithRefinedSoundex(String):Option[String]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithRefinedSoundex</span><span class="params">(<span name="string">string: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithRefinedSoundex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithRefinedSoundex(charArray:Array[Char]):Option[Array[Char]]"></a>
-      <a id="computeWithRefinedSoundex(Array[Char]):Option[Array[Char]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithRefinedSoundex</span><span class="params">(<span name="charArray">charArray: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithSoundex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithSoundex(string:String):Option[String]"></a>
-      <a id="computeWithSoundex(String):Option[String]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithSoundex</span><span class="params">(<span name="string">string: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#computeWithSoundex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="computeWithSoundex(charArray:Array[Char]):Option[Array[Char]]"></a>
-      <a id="computeWithSoundex(Array[Char]):Option[Array[Char]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">computeWithSoundex</span><span class="params">(<span name="charArray">charArray: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Char">Char</span>]]</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -395,32 +284,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#metaphone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="metaphone:com.rockymadden.stringmetric.phonetic.MetaphoneAlgorithm.type"></a>
-      <a id="metaphone:MetaphoneAlgorithm.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">metaphone</span><span class="result">: <a href="phonetic/MetaphoneAlgorithm$.html" class="extype" name="com.rockymadden.stringmetric.phonetic.MetaphoneAlgorithm">MetaphoneAlgorithm</a>.type</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#nGram" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="nGram:com.rockymadden.stringmetric.similarity.NGramAlgorithm.type"></a>
-      <a id="nGram:NGramAlgorithm.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">nGram</span><span class="result">: <a href="similarity/NGramAlgorithm$.html" class="extype" name="com.rockymadden.stringmetric.similarity.NGramAlgorithm">NGramAlgorithm</a>.type</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -460,45 +323,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#nysiis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="nysiis:com.rockymadden.stringmetric.phonetic.NysiisAlgorithm.type"></a>
-      <a id="nysiis:NysiisAlgorithm.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">nysiis</span><span class="result">: <a href="phonetic/NysiisAlgorithm$.html" class="extype" name="com.rockymadden.stringmetric.phonetic.NysiisAlgorithm">NysiisAlgorithm</a>.type</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#refinedSoundex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="refinedSoundex:com.rockymadden.stringmetric.phonetic.RefinedSoundexAlgorithm.type"></a>
-      <a id="refinedSoundex:RefinedSoundexAlgorithm.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">refinedSoundex</span><span class="result">: <a href="phonetic/RefinedSoundexAlgorithm$.html" class="extype" name="com.rockymadden.stringmetric.phonetic.RefinedSoundexAlgorithm">RefinedSoundexAlgorithm</a>.type</span>
-      </span>
-      </h4>
-      
-    </li><li name="com.rockymadden.stringmetric.StringAlgorithmLike#soundex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="soundex:com.rockymadden.stringmetric.phonetic.SoundexAlgorithm.type"></a>
-      <a id="soundex:SoundexAlgorithm.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">soundex</span><span class="result">: <a href="phonetic/SoundexAlgorithm$.html" class="extype" name="com.rockymadden.stringmetric.phonetic.SoundexAlgorithm">SoundexAlgorithm</a>.type</span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -582,7 +406,9 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="com.rockymadden.stringmetric.AlgorithmLike">
+              <h3>Inherited from <a href="AlgorithmLike.html" class="extype" name="com.rockymadden.stringmetric.AlgorithmLike">AlgorithmLike</a>[<span class="extype" name="com.rockymadden.stringmetric.Algorithm.T">T</span>, <span class="extype" name="com.rockymadden.stringmetric.Algorithm.R">R</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
