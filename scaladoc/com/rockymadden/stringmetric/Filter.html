@@ -40,13 +40,16 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Filter</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="FilterLike.html" class="extype" name="com.rockymadden.stringmetric.FilterLike">FilterLike</a>[<span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span>]</span>
+        <span class="name">Filter</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Filterable.html" class="extype" name="com.rockymadden.stringmetric.Filterable">Filterable</a>[<span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span>]</span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="FilterLike.html" class="extype" name="com.rockymadden.stringmetric.FilterLike">FilterLike</a>[<span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="Filterable.html" class="extype" name="com.rockymadden.stringmetric.Filterable">Filterable</a>[<span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+          <span class="toggle">Known Subclasses</span>
+          <div class="subClasses hiddenContent"><a href="filter/AsciiControlOnlyStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiControlOnlyStringFilter">AsciiControlOnlyStringFilter</a>, <a href="filter/AsciiControlStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiControlStringFilter">AsciiControlStringFilter</a>, <a href="filter/AsciiLetterCaseStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiLetterCaseStringFilter">AsciiLetterCaseStringFilter</a>, <a href="filter/AsciiLetterNumberOnlyStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiLetterNumberOnlyStringFilter">AsciiLetterNumberOnlyStringFilter</a>, <a href="filter/AsciiLetterNumberStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiLetterNumberStringFilter">AsciiLetterNumberStringFilter</a>, <a href="filter/AsciiLetterOnlyStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiLetterOnlyStringFilter">AsciiLetterOnlyStringFilter</a>, <a href="filter/AsciiLetterStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiLetterStringFilter">AsciiLetterStringFilter</a>, <a href="filter/AsciiNumberOnlyStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiNumberOnlyStringFilter">AsciiNumberOnlyStringFilter</a>, <a href="filter/AsciiNumberStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiNumberStringFilter">AsciiNumberStringFilter</a>, <a href="filter/AsciiSpaceStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiSpaceStringFilter">AsciiSpaceStringFilter</a>, <a href="filter/AsciiSymbolOnlyStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiSymbolOnlyStringFilter">AsciiSymbolOnlyStringFilter</a>, <a href="filter/AsciiSymbolStringFilter.html" class="extype" name="com.rockymadden.stringmetric.filter.AsciiSymbolStringFilter">AsciiSymbolStringFilter</a>, <a href="StringFilter.html" class="extype" name="com.rockymadden.stringmetric.StringFilter">StringFilter</a>, <a href="filter/StringFilterDelegate.html" class="extype" name="com.rockymadden.stringmetric.filter.StringFilterDelegate">StringFilterDelegate</a></div>
         </div></div>
         
 
@@ -64,7 +67,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.rockymadden.stringmetric.Filter"><span>Filter</span></li><li class="in" name="com.rockymadden.stringmetric.FilterLike"><span>FilterLike</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.rockymadden.stringmetric.Filter"><span>Filter</span></li><li class="in" name="com.rockymadden.stringmetric.Filterable"><span>Filterable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -88,7 +91,7 @@
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="com.rockymadden.stringmetric.FilterLike#filter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+              <ol><li name="com.rockymadden.stringmetric.Filterable#filter" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="filter(t:T):T"></a>
       <a id="filter(T):T"></a>
       <h4 class="signature">
@@ -100,7 +103,7 @@
         <span class="name">filter</span><span class="params">(<span name="t">t: <span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span></span>)</span><span class="result">: <span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="FilterLike.html" class="extype" name="com.rockymadden.stringmetric.FilterLike">FilterLike</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Filterable.html" class="extype" name="com.rockymadden.stringmetric.Filterable">Filterable</a></dd></dl></div>
     </li></ol>
             </div>
 
@@ -403,8 +406,8 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="com.rockymadden.stringmetric.FilterLike">
-              <h3>Inherited from <a href="FilterLike.html" class="extype" name="com.rockymadden.stringmetric.FilterLike">FilterLike</a>[<span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span>]</h3>
+        <div class="parent" name="com.rockymadden.stringmetric.Filterable">
+              <h3>Inherited from <a href="Filterable.html" class="extype" name="com.rockymadden.stringmetric.Filterable">Filterable</a>[<span class="extype" name="com.rockymadden.stringmetric.Filter.T">T</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
